@@ -32,11 +32,28 @@ List<Plane> planes = new()
 
 List<Route> routes = new()
 {
-    new Route { Id = 1, Origin = "New York", Destination = "London" },
-    new Route { Id = 2, Origin = "Los Angeles", Destination = "Tokyo" },
-    new Route { Id = 3, Origin = "Paris", Destination = "Berlin" },
-    new Route { Id = 4, Origin = "Chicago", Destination = "Toronto" },
-    new Route { Id = 5, Origin = "Sydney", Destination = "Singapore" }
+    new Route
+    {
+        Id = 1, Origin = "New York", OriginCountry = "USA", Destination = "London", DestinationCountry = "Great Britain"
+    },
+    new Route
+    {
+        Id = 2, Origin = "Los Angeles", OriginCountry = "USA", Destination = "Tokyo",
+        DestinationCountry = "Japan"
+    },
+    new Route
+    {
+        Id = 3, Origin = "Paris", OriginCountry = "France", Destination = "Berlin", DestinationCountry = "Germany"
+    },
+    new Route
+    {
+        Id = 4, Origin = "Chicago", OriginCountry = "USA", Destination = "Toronto", DestinationCountry = "Canada"
+    },
+    new Route
+    {
+        Id = 5, Origin = "Sydney", OriginCountry = "Australia", Destination = "Singapore",
+        DestinationCountry = "Singapore"
+    }
 };
 
 List<RoutePlane> routePlanes = new()
@@ -117,6 +134,10 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 
 // фільтрація 
+// відбір літаків Боїнг 777 з місткістю не менше 300
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Фільтрація");
+Console.ResetColor();
 var collection1 = from plane in planes
     where plane.Model == "Boeing 777" && plane.Capacity >= 300
     select plane;
@@ -128,6 +149,10 @@ foreach (var plane in collection1)
 Console.WriteLine();
 
 // з'єднання
+// декартовий добуток літаків та авіакомпаній
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("З'єднання");
+Console.ResetColor();
 var collection2 = from plane in planes
     from airline in airlines
     select new { regNumber = plane.RegNumber, airline = airline.Name };
@@ -139,6 +164,10 @@ foreach (var item in collection2)
 Console.WriteLine();
 
 // групування
+// групування літаків за країнами їхніх авіакомпаній
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Групування");
+Console.ResetColor();
 var collection3 = from plane in planes
     join airline in airlines
         on plane.AirlineId equals airline.Id
@@ -152,43 +181,22 @@ foreach (var plane in collection3)
 Console.WriteLine();
 
 // групування з фільтрацією
-
-// var collection4 = passengers.Join(tickets, passenger => passenger.Id, ticket => ticket.PassengerId,
-//         (passenger, ticket) => (passenger.Age, ticket.SeatClass))
-//     .Where(ticket => ticket.SeatClass == SeatClass.Business)
-//     .GroupBy(passenger =>
-//     {
-//         if (passenger.Age >= 25 && passenger.Age <= 27)
-//         {
-//             return "Молодші";
-//         }
-//
-//         if (passenger.Age >= 28 && passenger.Age <= 32)
-//         {
-//             return "Середні";
-//         }
-//
-//         if (passenger.Age >= 33 && passenger.Age <= 36)
-//         {
-//             return "Старші";
-//         }
-//
-//         return "Інші";
-//     });
-
+// групування пасажирів з квитками бізнес-класу за віковими категоріями 
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Групування з фільтрацією");
+Console.ResetColor();
 var collection4 = passengers
-    .Where(p => tickets.Any(t => t.PassengerId == p.Id && t.SeatClass == SeatClass.Business)) // Фільтр пасажирів, які мають квитки бізнес-класу
+    .Where(p => tickets.Any(t => t.PassengerId == p.Id && t.SeatClass == SeatClass.Business))
     .GroupBy(p =>
     {
         return p.Age switch
-        {
-            >= 25 and <= 27 => "Молодші",
-            >= 28 and <= 32 => "Середні",
+        { 
+            <= 27 => "Молодші",
+            <= 32 => "Середні",
             >= 33 => "Старші",
-            _ => "Інші"
         };
     })
-    .Select(group => new 
+    .Select(group => new
     {
         AgeGroup = group.Key,
         Passengers = group.ToList()
@@ -202,21 +210,92 @@ foreach (var group in collection4)
         Console.WriteLine($"{passenger.Surname} - {group.AgeGroup}");
     }
 }
+
 Console.WriteLine();
 
+// агрегування
+// Вивід пасажирів, чий вік дорівнює середньому
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Агрегування");
+Console.ResetColor();
+var collection5 = passengers.Where(p => p.Age == Math.Floor(passengers.Average(p => p.Age)));
+foreach (var passenger in collection5)
+{
+    Console.Write($"{passenger.Surname} {passenger.Name}, ");
+}
 
+Console.WriteLine('\n');
+
+// групування з агрегуванням
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Групування з агрегуванням");
+Console.ResetColor();
+var collection6 = passengers
+    .GroupBy(p =>
+    {
+        return p.Age switch
+        { 
+            <= 27 => "Молодші",
+            <= 32 => "Середні",
+            >= 33 => "Старші",
+        };
+    }) 
+    .Select(group => new
+    {
+        AgeRange = group.Key,  
+        Count = group.Count(),                    
+        AverageAge = group.Average(p => p.Age),  
+        Passengers = group.ToList()
+    });
+foreach (var group in collection6)
+{
+    Console.WriteLine(group.AgeRange);
+    Console.Write('\t');
+    foreach (var p in group.Passengers)
+    {
+        Console.Write($"{p.Surname} {p.Name}, ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
 
 // сортування з фільтрацією
-var collection6 = from passenger in passengers
+// пасажири віку від 20 до 30 у спадному порядку
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Сортування з фільтрацією");
+Console.ResetColor();
+var collection7 = from passenger in passengers
     where passenger.Age is >= 20 and <= 30
     orderby passenger.Age descending
     select passenger;
-foreach (var passenger in collection6)
+foreach (var passenger in collection7)
 {
     Console.WriteLine($"{passenger.Surname} - {passenger.Age}");
 }
 
 Console.WriteLine();
+
+// використання проміжних змінних
+// групування рейсів по країнах вильоту з використанням проміжної route_group
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Використання проміжних змінних");
+Console.ResetColor();
+var collection10 = from route in routes
+    group route by route.OriginCountry
+    into route_group
+    select new
+    {
+        OriginCountry = route_group.Key,
+        Routes = route_group.ToList()
+    };
+foreach (var group in collection10)
+{
+    Console.WriteLine($"{group.OriginCountry}");
+    foreach (var item in group.Routes)
+    {
+        Console.WriteLine($"\t{item.Origin} - {item.Destination}");
+    }
+}
 
 
 public enum SeatClass
@@ -262,7 +341,9 @@ public class Route
 {
     public int Id { get; set; }
     public string Origin { get; set; }
+    public string OriginCountry { get; set; }
     public string Destination { get; set; }
+    public string DestinationCountry { get; set; }
 }
 
 public class RoutePlane
