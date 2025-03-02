@@ -315,19 +315,19 @@ foreach (var group in collection10)
 
 // запит до варіанту 1
 
-DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
-var delayedRoutes = from f in flights
-    where f.departureDateTime >= sixMonthsAgo
-    group f by f.routeId into g
-    let avgDelay = g.Average(f => (f.realDepartureDateTime - f.departureDateTime).TotalMinutes)
-    where avgDelay > 30
-    join r in routes on g.Key equals r.id
-    select new { r.origin, r.destination, AverageDelay = avgDelay };
-
-foreach (var route in delayedRoutes)
-{
-    Console.WriteLine($"Маршрут: {route.origin} -> {route.destination}, Середня затримка: {route.AverageDelay} хв");
-}
+// DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
+// var delayedRoutes = from f in flights
+//     where f.departureDateTime >= sixMonthsAgo
+//     group f by f.routeId into g
+//     let avgDelay = g.Average(f => (f.realDepartureDateTime - f.departureDateTime).TotalMinutes)
+//     where avgDelay > 30
+//     join r in routes on g.Key equals r.id
+//     select new { r.origin, r.destination, AverageDelay = avgDelay };
+//
+// foreach (var route in delayedRoutes)
+// {
+//     Console.WriteLine($"Маршрут: {route.origin} -> {route.destination}, Середня затримка: {route.AverageDelay} хв");
+// }
 
 
 public enum SeatClass
