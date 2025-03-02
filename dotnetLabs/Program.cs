@@ -116,19 +116,6 @@ List<Ticket> tickets = new()
 };
 
 
-// DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
-// var delayedRoutes = from f in flights
-//     where f.departureDateTime >= sixMonthsAgo
-//     group f by f.routeId into g
-//     let avgDelay = g.Average(f => (f.realDepartureDateTime - f.departureDateTime).TotalMinutes)
-//     where avgDelay > 30
-//     join r in routes on g.Key equals r.id
-//     select new { r.origin, r.destination, AverageDelay = avgDelay };
-//
-// foreach (var route in delayedRoutes)
-// {
-//     Console.WriteLine($"Маршрут: {route.origin} -> {route.destination}, Середня затримка: {route.AverageDelay} хв");
-// }
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -227,6 +214,7 @@ foreach (var passenger in collection5)
 Console.WriteLine('\n');
 
 // групування з агрегуванням
+// групування пасажирів за віковими категоріями з додатковими даними 
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("Групування з агрегуванням");
 Console.ResetColor();
@@ -272,7 +260,35 @@ foreach (var passenger in collection7)
 {
     Console.WriteLine($"{passenger.Surname} - {passenger.Age}");
 }
+Console.WriteLine();
 
+// об'єднання результатів декількох запитів в один
+// об'єднання літаків Boeing 777 та літаків авіакомпаній Британії
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Об'єднання результатів");
+Console.ResetColor();
+var boeings = planes.Join(airlines, p => p.AirlineId, a => a.Id,
+    (plane, airline) => new { Plane = plane, Airline = airline }).Where(plane => plane.Plane.Model == "Boeing 777"); 
+var uk_planes = planes.Join(airlines, p => p.AirlineId, a => a.Id,
+    (plane, airline) => new { Plane = plane, Airline = airline }).Where(p => p.Airline.Country == "UK");
+var collection8 = boeings.Union(uk_planes).Distinct();
+
+foreach (var plane in collection8)
+{
+    Console.WriteLine($"{plane.Plane.Model}, {plane.Plane.RegNumber} - {plane.Airline.Country}");
+}
+Console.WriteLine();
+
+// перетворення в інші структури
+// перетворення у словник маршрути. Ключ - id, значення (рейс та час)
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Об'єднання результатів");
+Console.ResetColor();
+var collection9 = routes.ToDictionary(route => route.Id);
+foreach (var route in collection9)
+{
+    Console.WriteLine($"ID: {route.Key} - {route.Value.Origin}-{route.Value.Destination}");
+}
 Console.WriteLine();
 
 // використання проміжних змінних
@@ -295,6 +311,22 @@ foreach (var group in collection10)
     {
         Console.WriteLine($"\t{item.Origin} - {item.Destination}");
     }
+}
+
+// запит до варіанту 1
+
+DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
+var delayedRoutes = from f in flights
+    where f.departureDateTime >= sixMonthsAgo
+    group f by f.routeId into g
+    let avgDelay = g.Average(f => (f.realDepartureDateTime - f.departureDateTime).TotalMinutes)
+    where avgDelay > 30
+    join r in routes on g.Key equals r.id
+    select new { r.origin, r.destination, AverageDelay = avgDelay };
+
+foreach (var route in delayedRoutes)
+{
+    Console.WriteLine($"Маршрут: {route.origin} -> {route.destination}, Середня затримка: {route.AverageDelay} хв");
 }
 
 
