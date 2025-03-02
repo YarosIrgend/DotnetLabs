@@ -32,7 +32,7 @@ List<Plane> planes = new()
     new Plane { Id = 8, Model = "Airbus A320", RegNumber = "CD-123", Capacity = 150, AirlineId = 2 },
     new Plane { Id = 9, Model = "Boeing 747", RegNumber = "KL-567", Capacity = 400, AirlineId = 6 },
     new Plane { Id = 10, Model = "Boeing 737", RegNumber = "MN-890", Capacity = 180, AirlineId = 7 },
-    new Plane { Id = 11, Model = "Kleine 001", RegNumber = "RF-931", Capacity = 10, AirlineId = 1 },
+    new Plane { Id = 11, Model = "Kleine 001", RegNumber = "RF-931", Capacity = 10, AirlineId = 2 },
 };
 
 List<Route> routes = new()
@@ -62,69 +62,41 @@ List<Route> routes = new()
     new Route
     {
         Id = 7, Origin = "London", OriginCountry = "UK", Destination = "Sydney", DestinationCountry = "Australia"
+    },
+    new Route
+    {
+        Id = 8, Origin = "London", OriginCountry = "UK", Destination = "Tokyo", DestinationCountry = "Japan"
     }
 };
 
 List<RoutePlane> routePlanes = new()
 {
-    new RoutePlane { PlaneId = 1, RouteId = 1 },
-    new RoutePlane { PlaneId = 2, RouteId = 2 },
-    new RoutePlane { PlaneId = 3, RouteId = 3 },
-    new RoutePlane { PlaneId = 4, RouteId = 4 },
-    new RoutePlane { PlaneId = 5, RouteId = 5 },
-    new RoutePlane { PlaneId = 6, RouteId = 6 },
-    new RoutePlane { PlaneId = 7, RouteId = 7 },
-    new RoutePlane { PlaneId = 9, RouteId = 1 },
-    new RoutePlane { PlaneId = 10, RouteId = 2 }
+    new RoutePlane { Id=1,PlaneId = 1, RouteId = 1 },
+    new RoutePlane { Id=2,PlaneId = 2, RouteId = 2 },
+    new RoutePlane { Id=3, PlaneId = 3, RouteId = 3 },
+    new RoutePlane { Id=4,PlaneId = 4, RouteId = 4 },
+    new RoutePlane { Id=5,PlaneId = 5, RouteId = 5 },
+    new RoutePlane { Id=6,PlaneId = 6, RouteId = 6 },
+    new RoutePlane { Id=7,PlaneId = 7, RouteId = 7 },
+    new RoutePlane { Id=8,PlaneId = 9, RouteId = 1 },
+    new RoutePlane { Id=9,PlaneId = 10, RouteId = 2 },
+    new RoutePlane { Id=10,PlaneId = 11, RouteId = 8 },
 };
 
 List<Flight> flights = new()
 {
-    new Flight
-    {
-        Id = 1, departureDateTime = DateTime.UtcNow.AddMonths(-5),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-5).AddMinutes(45), routeId = 1
-    },
-    new Flight
-    {
-        Id = 2, departureDateTime = DateTime.UtcNow.AddMonths(-4),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-4).AddMinutes(20), routeId = 1
-    },
-    new Flight
-    {
-        Id = 3, departureDateTime = DateTime.UtcNow.AddMonths(-3),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(50), routeId = 2
-    },
-    new Flight
-    {
-        Id = 4, departureDateTime = DateTime.UtcNow.AddMonths(-2),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(10), routeId = 2
-    },
-    new Flight
-    {
-        Id = 5, departureDateTime = DateTime.UtcNow.AddMonths(-1),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(60), routeId = 3
-    },
-    new Flight
-    {
-        Id = 6, departureDateTime = DateTime.UtcNow.AddMonths(-7),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-7).AddMinutes(15), routeId = 3
-    },
-    new Flight
-    {
-        Id = 7, departureDateTime = DateTime.UtcNow.AddMonths(-6),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-6).AddMinutes(25), routeId = 6
-    },
-    new Flight
-    {
-        Id = 8, departureDateTime = DateTime.UtcNow.AddMonths(-3),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(40), routeId = 7
-    },
-    new Flight
-    {
-        Id = 9, departureDateTime = DateTime.UtcNow.AddMonths(-1),
-        realDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(35), routeId = 6
-    }
+    new Flight { Id = 1, departureDateTime = DateTime.UtcNow.AddMonths(-5), realDepartureDateTime = DateTime.UtcNow.AddMonths(-5).AddMinutes(45), routePlaneId = 1 },
+    new Flight { Id = 2, departureDateTime = DateTime.UtcNow.AddMonths(-4), realDepartureDateTime = DateTime.UtcNow.AddMonths(-4).AddMinutes(20), routePlaneId = 1 },
+    new Flight { Id = 3, departureDateTime = DateTime.UtcNow.AddMonths(-3), realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(50), routePlaneId = 2 },
+    new Flight { Id = 4, departureDateTime = DateTime.UtcNow.AddMonths(-2), realDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(10), routePlaneId = 2 },
+    new Flight { Id = 5, departureDateTime = DateTime.UtcNow.AddMonths(-1), realDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(60), routePlaneId = 3 },
+    new Flight { Id = 6, departureDateTime = DateTime.UtcNow.AddMonths(-7), realDepartureDateTime = DateTime.UtcNow.AddMonths(-7).AddMinutes(15), routePlaneId = 3 },
+    new Flight { Id = 7, departureDateTime = DateTime.UtcNow.AddMonths(-6), realDepartureDateTime = DateTime.UtcNow.AddMonths(-6).AddMinutes(25), routePlaneId = 4 },
+    new Flight { Id = 8, departureDateTime = DateTime.UtcNow.AddMonths(-3), realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(40), routePlaneId = 5 },
+    new Flight { Id = 9, departureDateTime = DateTime.UtcNow.AddMonths(-1), realDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(35), routePlaneId = 5 },
+    new Flight { Id = 10, departureDateTime = DateTime.UtcNow.AddMonths(-2), realDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(50), routePlaneId = 9 },
+    new Flight { Id = 11, departureDateTime = DateTime.UtcNow.AddMonths(-3), realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), routePlaneId = 9 },
+    new Flight { Id = 12, departureDateTime = DateTime.UtcNow.AddMonths(-3), realDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), routePlaneId = 10 },
 };
 
 List<Ticket> tickets = new()
@@ -142,7 +114,19 @@ List<Ticket> tickets = new()
     new Ticket { Id = 11, SeatClass = SeatClass.First, PassengerId = 4, FlightId = 5 },
     new Ticket { Id = 12, SeatClass = SeatClass.Economy, PassengerId = 2, FlightId = 4 },
     new Ticket { Id = 13, SeatClass = SeatClass.Business, PassengerId = 5, FlightId = 7 },
-    new Ticket { Id = 14, SeatClass = SeatClass.Economy, PassengerId = 6, FlightId = 7 }
+    new Ticket { Id = 14, SeatClass = SeatClass.Economy, PassengerId = 6, FlightId = 7 },
+    new Ticket { Id = 15, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 3 },
+    new Ticket { Id = 16, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 5 },
+    new Ticket { Id = 17, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 7 },
+    new Ticket { Id = 18, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 8 },
+    new Ticket { Id = 19, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 10 },
+    new Ticket { Id = 20, SeatClass = SeatClass.Business, PassengerId = 2, FlightId = 12 },
+    new Ticket { Id = 21, SeatClass = SeatClass.Business, PassengerId = 3, FlightId = 12 },
+    new Ticket { Id = 22, SeatClass = SeatClass.Business, PassengerId = 4, FlightId = 12 },
+    new Ticket { Id = 23, SeatClass = SeatClass.Business, PassengerId = 5, FlightId = 12 },
+    new Ticket { Id = 24, SeatClass = SeatClass.Business, PassengerId = 6, FlightId = 12 },
+    new Ticket { Id = 25, SeatClass = SeatClass.Business, PassengerId = 7, FlightId = 12 },
+    new Ticket { Id = 26, SeatClass = SeatClass.Business, PassengerId = 1, FlightId = 12 },
 };
 
 
@@ -315,12 +299,12 @@ Console.WriteLine();
 // перетворення в інші структури
 // перетворення у словник маршрути. Ключ - id, значення (рейс та час)
 Console.ForegroundColor = ConsoleColor.Cyan;
-Console.WriteLine("Об'єднання результатів");
+Console.WriteLine("Перетворення у словник");
 Console.ResetColor();
 var collection9 = routes.ToDictionary(route => route.Id);
 foreach (var route in collection9)
 {
-    Console.WriteLine($"ID: {route.Key} - {route.Value.Origin}-{route.Value.Destination}");
+    Console.WriteLine($"ID: {route.Key}, Value: {route.Value.Origin}-{route.Value.Destination}");
 }
 
 Console.WriteLine();
@@ -358,7 +342,7 @@ Console.ResetColor();
 DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
 var delayedRoutes = from f in flights
     where f.departureDateTime >= sixMonthsAgo
-    group f by f.routeId
+    group f by f.routePlaneId
     into g
     let avgDelay = Math.Floor(g.Average(f => (f.realDepartureDateTime - f.departureDateTime).TotalMinutes))
     where avgDelay > 30
@@ -379,20 +363,19 @@ Console.WriteLine("Запит до варіанту 2");
 Console.ResetColor();
 
 DateTime yearAgo = DateTime.Now.AddYears(-1);
-var passengerFlownWithFiveLines = from f in flights
-    where f.departureDateTime >= yearAgo
-    join t in tickets on f.Id equals t.FlightId
-    join p in passengers on t.PassengerId equals p.Id
-    join r in routes on f.routeId equals r.Id
-    join rp in routePlanes on r.Id equals rp.RouteId
-    join pl in planes on r.Id equals pl.Id
-    join a in airlines on r.Id equals a.Id
-    group a by t.PassengerId
-    into g
-    where g.Select(a => a.Id).Distinct().Count() > 5 // Пасажири, що літали з >5 авіакомпаніями
-    join passenger in passengers on g.Key equals passenger.Id
+var frequentPassengers =
+    from ticket in tickets
+    join flight in flights on ticket.FlightId equals flight.Id
+    where flight.departureDateTime >= yearAgo
+    join routePlane in routePlanes on flight.routePlaneId equals routePlane.Id
+    join plane in planes on routePlane.PlaneId equals plane.Id
+    join airline in airlines on plane.AirlineId equals airline.Id
+    group airline by ticket.PassengerId into passengerAirlines
+    where passengerAirlines.Select(a => a.Id).Distinct().Count() > 5
+    join passenger in passengers on passengerAirlines.Key equals passenger.Id
     select passenger;
-foreach (var passenger in passengerFlownWithFiveLines)
+
+foreach (var passenger in frequentPassengers)
 {
     Console.WriteLine($"{passenger.Surname} {passenger.Name}");
 }
@@ -405,24 +388,31 @@ Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("Запит до варіанту 3");
 Console.ResetColor();
 
-var routesWithHighBusinessClass =
-    from f in flights
-    join t in tickets on f.Id equals t.FlightId
-    join rp in routePlanes on f.routeId equals rp.RouteId
-    join p in planes on rp.PlaneId equals p.Id
-    where t.SeatClass == SeatClass.Business
-    group new { f, t, p } by f.routeId
-    into g
-    let avgBusinessPassengers = g.Count()
-    let avgCapacity = g.Average(x => x.p.Capacity)
-    where avgBusinessPassengers / avgCapacity > 0.6
-    join r in routes on g.Key equals r.Id
-    select new { r.Origin, r.Destination, BusinessPassengersPercentage = avgBusinessPassengers / avgCapacity };
+var routesWithHighBusinessClassLoad =
+    from flight in flights
+    join routePlane in routePlanes on flight.routePlaneId equals routePlane.Id
+    join route in routes on routePlane.RouteId equals route.Id
+    join plane in planes on routePlane.PlaneId equals plane.Id
+    join ticket in tickets on flight.Id equals ticket.FlightId
+    where ticket.SeatClass == SeatClass.Business
+    group ticket by new { route.Id, route.Origin, route.Destination, plane.Capacity } into grouped
+    let averageBusinessPassengers = grouped.Count() / (double)grouped.Select(t => t.FlightId).Distinct().Count()
+    where averageBusinessPassengers > 0.6 * grouped.Key.Capacity
+    select new
+    {
+        RouteId = grouped.Key.Id,
+        Origin = grouped.Key.Origin,
+        Destination = grouped.Key.Destination,
+        AverageBusinessPassengers = averageBusinessPassengers,
+        PlaneCapacity = grouped.Key.Capacity
+    };
 
-foreach (var route in routesWithHighBusinessClass)
+// Вивід результатів
+foreach (var route in routesWithHighBusinessClassLoad)
 {
-    Console.WriteLine($"{route.Origin}-{route.Destination}, {route.BusinessPassengersPercentage}");
+    Console.WriteLine($"{route.Origin}-{route.Destination}");
 }
+
 
 Console.WriteLine();
 
@@ -434,7 +424,7 @@ Console.WriteLine("Запит до варіанту 4");
 Console.ResetColor();
 var delayedAirlines =
     from f in flights
-    join rp in routePlanes on f.routeId equals rp.RouteId
+    join rp in routePlanes on f.routePlaneId equals rp.RouteId
     join p in planes on rp.PlaneId equals p.Id
     join a in airlines on p.AirlineId equals a.Id
     let delayMinutes = (f.realDepartureDateTime - f.departureDateTime).TotalMinutes
@@ -475,7 +465,7 @@ public class Flight
     public int Id { get; set; }
     public DateTime departureDateTime { get; set; }
     public DateTime realDepartureDateTime { get; set; }
-    public int routeId { get; set; }
+    public int routePlaneId { get; set; }
 }
 
 public class Passenger
@@ -506,6 +496,7 @@ public class Route
 
 public class RoutePlane
 {
+    public int Id { get; set; }
     public int PlaneId { get; set; }
     public int RouteId { get; set; }
 }
