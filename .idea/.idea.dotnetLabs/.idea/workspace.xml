@@ -8,6 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Classes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Data.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/linqToObjectsQueries.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
     </list>
@@ -100,9 +104,9 @@
       <workItem from="1740922930868" duration="10862000" />
       <workItem from="1740936241924" duration="208000" />
       <workItem from="1740943158945" duration="2587000" />
-      <workItem from="1740948571054" duration="6906000" />
-      <workItem from="1740983474001" duration="5386000" />
-      <workItem from="1740997411665" duration="3206000" />
+      <workItem from="1741117384418" duration="1326000" />
+      <workItem from="1743181147571" duration="17681000" />
+      <workItem from="1743247528302" duration="2293000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <option name="closed" value="true" />
@@ -136,15 +140,7 @@
       <option name="project" value="LOCAL" />
       <updated>1740936436466</updated>
     </task>
-    <task id="LOCAL-00005" summary="completed lab1">
-      <option name="closed" value="true" />
-      <created>1740955197302</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1740955197303</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +151,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="updated" />
-    <MESSAGE value="completed lab1" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed lab1" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
 </project>
