@@ -3,6 +3,7 @@ namespace dotnetLabs;
 
 public static class XmlWriterMethods
 {
+    // завдання 2
     public static void CreateXmlWriter()
     {
         XmlWriterSettings settings = new XmlWriterSettings();
@@ -23,6 +24,7 @@ public static class XmlWriterMethods
         }
     }
 
+    // запис наявних даних в xml
     public static void WriteXmlFile()
     {
         XmlWriterSettings settings = new XmlWriterSettings();
@@ -33,10 +35,17 @@ public static class XmlWriterMethods
         {
             writer.WriteStartElement("AirportSystem");
             WritePassengers(writer, Data.passengers);
+            WriteAirlines(writer, Data.airlines);
+            WritePlanes(writer, Data.planes);
+            WriteRoutes(writer, Data.routes);
+            WriteRoutePlanes(writer, Data.routePlanes);
+            WriteFlights(writer, Data.flights);
+            WriteTickets(writer, Data.tickets);
             writer.WriteEndElement();
         }
     }
 
+    // методи для завдання 2
     private static void WritePassenger(XmlWriter writer)
     {
         Console.WriteLine("Створимо пасажира");
@@ -145,12 +154,108 @@ public static class XmlWriterMethods
         writer.WriteEndElement();
     }
 
+    // методи для запису наявних даних в xml
     private static void WritePassengers(XmlWriter writer, List<Passenger> passengers)
     {
         writer.WriteStartElement("passengers");
         foreach (var passenger in passengers)
         {
+            writer.WriteStartElement("passenger");
             writer.WriteElementString("Id", passenger.Id.ToString());
+            writer.WriteElementString("Name", passenger.Name);
+            writer.WriteElementString("Surname", passenger.Surname);
+            writer.WriteElementString("Age", passenger.Age.ToString());
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WriteAirlines(XmlWriter writer, List<Airline> airlines)
+    {
+        writer.WriteStartElement("airlines");
+        foreach (var airline in airlines)
+        {
+            writer.WriteStartElement("airline");
+            writer.WriteElementString("Id", airline.Id.ToString());
+            writer.WriteElementString("Name", airline.Name);
+            writer.WriteElementString("Country", airline.Country);
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WritePlanes(XmlWriter writer, List<Plane> planes)
+    {
+        writer.WriteStartElement("planes");
+        foreach (var plane in planes)
+        {
+            writer.WriteStartElement("plane");
+            writer.WriteElementString("Id", plane.Id.ToString());
+            writer.WriteElementString("Model", plane.Model);
+            writer.WriteElementString("RegNumber", plane.RegNumber);
+            writer.WriteElementString("Capacity", plane.Capacity.ToString());
+            writer.WriteElementString("AirlineId", plane.AirlineId.ToString());
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WriteRoutes(XmlWriter writer, List<Route> routes)
+    {
+        writer.WriteStartElement("routes");
+        foreach (var route in routes)
+        {
+            writer.WriteStartElement("route");
+            writer.WriteElementString("Id", route.Id.ToString());
+            writer.WriteElementString("Origin", route.Origin);
+            writer.WriteElementString("OriginCountry", route.OriginCountry);
+            writer.WriteElementString("Destination", route.Destination);
+            writer.WriteElementString("DestinationCountry", route.DestinationCountry);
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WriteRoutePlanes(XmlWriter writer, List<RoutePlane> routePlanes)
+    {
+        writer.WriteStartElement("routePlanes");
+        foreach (var routePlane in routePlanes)
+        {
+            writer.WriteStartElement("routePlane");
+            writer.WriteElementString("Id", routePlane.Id.ToString());
+            writer.WriteElementString("PlaneId", routePlane.PlaneId.ToString());
+            writer.WriteElementString("RouteId", routePlane.RouteId.ToString());
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WriteFlights(XmlWriter writer, List<Flight> flights)
+    {
+        writer.WriteStartElement("flights");
+        foreach (var flight in flights)
+        {
+            writer.WriteStartElement("flight");
+            writer.WriteElementString("Id", flight.Id.ToString());
+            writer.WriteElementString("DepartureDateTime", flight.DepartureDateTime.ToString("yyyy-MM-dd HH:mm"));
+            writer.WriteElementString("RealDepartureDateTime", flight.RealDepartureDateTime.ToString("yyyy-MM-dd HH:mm"));
+            writer.WriteElementString("RoutePlaneId", flight.routePlaneId.ToString());
+            writer.WriteEndElement();
+        }
+        writer.WriteEndElement();
+    }
+
+    private static void WriteTickets(XmlWriter writer, List<Ticket> tickets)
+    {
+        writer.WriteStartElement("tickets");
+        foreach (var ticket in tickets)
+        {
+            writer.WriteStartElement("ticket");
+            writer.WriteElementString("Id", ticket.Id.ToString());
+            writer.WriteElementString("SeatClass", ticket.SeatClass.ToString());
+            writer.WriteElementString("PassengerId", ticket.PassengerId.ToString());
+            writer.WriteElementString("FlightId", ticket.FlightId.ToString());
+            writer.WriteEndElement();
         }
         writer.WriteEndElement();
     }
