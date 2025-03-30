@@ -11,62 +11,84 @@ public enum SeatClass
 
 public class Airline
 {
-    [XmlAttribute]
-    public int Id { get; set; }
-    [XmlElement]
-    public string Name { get; set; }
-    [XmlElement]
-    public string Country { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public string Name { get; set; }
+    [XmlElement] public string Country { get; set; }
+
+    public Airline()
+    {
+    }
 }
 
 public class Flight
 {
-    public int Id { get; set; }
-    [XmlElement]
-    public DateTime DepartureDateTime { get; set; }
-    [XmlElement]
-    public DateTime RealDepartureDateTime { get; set; }
-    [XmlElement]
-    public int routePlaneId { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public DateTime DepartureDateTime { get; set; }
+    [XmlElement] public DateTime RealDepartureDateTime { get; set; }
+    [XmlElement] public int routePlaneId { get; set; }
+
+    public Flight()
+    {
+    }
 }
 
 public class Passenger
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Surname { get; set; }
-    public int Age { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public string Name { get; set; }
+    [XmlElement] public string Surname { get; set; }
+    [XmlElement] public int Age { get; set; }
+
+    public Passenger()
+    {
+    }
 }
 
 public class Plane
 {
-    public int Id { get; set; }
-    public string Model { get; set; }
-    public string RegNumber { get; set; }
-    public int Capacity { get; set; }
-    public int AirlineId { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public string Model { get; set; }
+    [XmlElement] public string RegNumber { get; set; }
+    [XmlElement] public int Capacity { get; set; }
+    [XmlElement] public int AirlineId { get; set; }
+
+    public Plane()
+    {
+    }
 }
 
 public class Route
 {
-    public int Id { get; set; }
-    public string Origin { get; set; }
-    public string OriginCountry { get; set; }
-    public string Destination { get; set; }
-    public string DestinationCountry { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public string Origin { get; set; }
+    [XmlElement] public string OriginCountry { get; set; }
+    [XmlElement] public string Destination { get; set; }
+    [XmlElement] public string DestinationCountry { get; set; }
+
+    public Route()
+    {
+    }
 }
 
 public class RoutePlane
 {
-    public int Id { get; set; }
-    public int PlaneId { get; set; }
-    public int RouteId { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public int PlaneId { get; set; }
+    [XmlElement] public int RouteId { get; set; }
+
+    public RoutePlane()
+    {
+    }
 }
 
 public class Ticket
 {
-    public int Id { get; set; }
-    public SeatClass SeatClass { get; set; }
-    public int PassengerId { get; set; }
-    public int FlightId { get; set; }
+    [XmlElement] public int Id { get; set; }
+    [XmlElement] public SeatClass SeatClass { get; set; }
+    [XmlElement] public int PassengerId { get; set; }
+    [XmlElement] public int FlightId { get; set; }
+
+    public Ticket()
+    {
+    }
 }
