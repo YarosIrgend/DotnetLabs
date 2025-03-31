@@ -239,7 +239,7 @@ public static class XmlWriterMethods
             writer.WriteElementString("Id", flight.Id.ToString());
             writer.WriteElementString("DepartureDateTime", flight.DepartureDateTime.ToString("yyyy-MM-dd HH:mm"));
             writer.WriteElementString("RealDepartureDateTime", flight.RealDepartureDateTime.ToString("yyyy-MM-dd HH:mm"));
-            writer.WriteElementString("RoutePlaneId", flight.routePlaneId.ToString());
+            writer.WriteElementString("RoutePlaneId", flight.RoutePlaneId.ToString());
             writer.WriteEndElement();
         }
         writer.WriteEndElement();

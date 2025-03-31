@@ -96,62 +96,62 @@ public static class Data
         new Flight
         {
             Id = 1, DepartureDateTime = DateTime.UtcNow.AddMonths(-5),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-5).AddMinutes(45), routePlaneId = 1
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-5).AddMinutes(45), RoutePlaneId = 1
         },
         new Flight
         {
             Id = 2, DepartureDateTime = DateTime.UtcNow.AddMonths(-4),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-4).AddMinutes(20), routePlaneId = 1
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-4).AddMinutes(20), RoutePlaneId = 1
         },
         new Flight
         {
             Id = 3, DepartureDateTime = DateTime.UtcNow.AddMonths(-3),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(50), routePlaneId = 2
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(50), RoutePlaneId = 2
         },
         new Flight
         {
             Id = 4, DepartureDateTime = DateTime.UtcNow.AddMonths(-2),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(10), routePlaneId = 2
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(10), RoutePlaneId = 2
         },
         new Flight
         {
             Id = 5, DepartureDateTime = DateTime.UtcNow.AddMonths(-1),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(60), routePlaneId = 3
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(60), RoutePlaneId = 3
         },
         new Flight
         {
             Id = 6, DepartureDateTime = DateTime.UtcNow.AddMonths(-7),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-7).AddMinutes(15), routePlaneId = 3
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-7).AddMinutes(15), RoutePlaneId = 3
         },
         new Flight
         {
             Id = 7, DepartureDateTime = DateTime.UtcNow.AddMonths(-6),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-6).AddMinutes(25), routePlaneId = 4
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-6).AddMinutes(25), RoutePlaneId = 4
         },
         new Flight
         {
             Id = 8, DepartureDateTime = DateTime.UtcNow.AddMonths(-3),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(40), routePlaneId = 5
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(40), RoutePlaneId = 5
         },
         new Flight
         {
             Id = 9, DepartureDateTime = DateTime.UtcNow.AddMonths(-1),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(35), routePlaneId = 5
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-1).AddMinutes(35), RoutePlaneId = 5
         },
         new Flight
         {
             Id = 10, DepartureDateTime = DateTime.UtcNow.AddMonths(-2),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(50), routePlaneId = 9
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-2).AddMinutes(50), RoutePlaneId = 9
         },
         new Flight
         {
             Id = 11, DepartureDateTime = DateTime.UtcNow.AddMonths(-3),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), routePlaneId = 9
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), RoutePlaneId = 9
         },
         new Flight
         {
             Id = 12, DepartureDateTime = DateTime.UtcNow.AddMonths(-3),
-            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), routePlaneId = 10
+            RealDepartureDateTime = DateTime.UtcNow.AddMonths(-3).AddMinutes(20), RoutePlaneId = 10
         },
     };
 

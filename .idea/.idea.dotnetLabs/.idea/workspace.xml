@@ -8,10 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/XmlDocumentMethods.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Classes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +38,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39dc06cf976d45fb84b819a41440074c79f910/37/9367e774/XPathNavigator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39dc06cf976d45fb84b819a41440074c79f910/71/3ba7ed0b/XmlTextReaderImpl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50e7efad1a37cb62ab4bc73124525f74d12a98bb25c653b05d6fe4c623637a/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -50,20 +51,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.dotnetLabs.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.dotnetLabs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="dotnetLabs" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -105,10 +106,11 @@
       <workItem from="1740943158945" duration="2587000" />
       <workItem from="1741117384418" duration="1326000" />
       <workItem from="1743181147571" duration="17681000" />
-      <workItem from="1743247528302" duration="2593000" />
-      <workItem from="1743261117873" duration="1415000" />
-      <workItem from="1743263600129" duration="2613000" />
-      <workItem from="1743266623639" duration="8656000" />
+      <workItem from="1743247528302" duration="2293000" />
+      <workItem from="1743349711357" duration="1689000" />
+      <workItem from="1743362042320" duration="59000" />
+      <workItem from="1743420169764" duration="10240000" />
+      <workItem from="1743431327374" duration="868000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <option name="closed" value="true" />
@@ -142,15 +144,7 @@
       <option name="project" value="LOCAL" />
       <updated>1740936436466</updated>
     </task>
-    <task id="LOCAL-00005" summary="updated">
-      <option name="closed" value="true" />
-      <created>1743250569688</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1743250569688</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
