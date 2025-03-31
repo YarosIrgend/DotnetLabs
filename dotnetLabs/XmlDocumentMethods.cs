@@ -4,9 +4,11 @@ namespace dotnetLabs;
 
 public static class XmlDocumentMethods
 {
+    private static XmlDocument doc;
+    
     public static void Run()
     {
-        XmlDocument doc = new XmlDocument();
+        doc = new XmlDocument();
         doc.Load("Airport.xml");
         XmlNode root = doc.DocumentElement;
         XmlNodeList nodes = root.ChildNodes;
@@ -15,22 +17,22 @@ public static class XmlDocumentMethods
             switch (node.Name)
             {
                 case "passengers":
-                    PrintPassengers(doc);
+                    PrintPassengers();
                     break;
                 case "airlines":
-                    PrintAirlines(doc);
+                    PrintAirlines();
                     break;
                 case "planes":
-                    PrintPlanes(doc);
+                    PrintPlanes();
                     break;
                 case "routes":
-                    PrintRoutes(doc);
+                    PrintRoutes();
                     break;
                 case "flights":
-                    PrintFlights(doc);
+                    PrintFlights();
                     break;
                 case "tickets":
-                    PrintTickets(doc);
+                    PrintTickets();
                     break;
                 default:
                     continue;
@@ -38,7 +40,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintPassengers(XmlDocument doc)
+    private static void PrintPassengers()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tPassengers");
@@ -53,7 +55,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintAirlines(XmlDocument doc)
+    private static void PrintAirlines()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tAirlines");
@@ -67,7 +69,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintPlanes(XmlDocument doc)
+    private static void PrintPlanes()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tPlanes");
@@ -82,7 +84,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintRoutes(XmlDocument doc)
+    private static void PrintRoutes()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tRoutes");
@@ -98,7 +100,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintFlights(XmlDocument doc)
+    private static void PrintFlights()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tFlights");
@@ -121,7 +123,7 @@ public static class XmlDocumentMethods
         }
     }
 
-    private static void PrintTickets(XmlDocument doc)
+    private static void PrintTickets()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\n\tTickets");
