@@ -8,6 +8,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("1 - Створення xml-файлу xmlwriter'ом");
 Console.WriteLine("2 - Завантаження існуючого файлу");
+Console.WriteLine("3 - XML-запити");
 Console.ResetColor();
 switch (Console.ReadLine())
 {
@@ -27,5 +28,7 @@ switch (Console.ReadLine())
                 break;
         }
         break;
+    case "3":
+        XmlQueries.Run();
+        break;
 }
-

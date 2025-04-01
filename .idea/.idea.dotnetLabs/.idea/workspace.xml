@@ -8,11 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/XmlQueries.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnetLabs/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a8a2211ff7b6ce5ab05b41d416904ec475a643fb8cbb2261f85a750b13217/Console.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50e7efad1a37cb62ab4bc73124525f74d12a98bb25c653b05d6fe4c623637a/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b855fbc1e37bfe07afce284794c772bc4a285ccb8e9d3fd8e71deea7f82d9a/TextWriter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -51,20 +53,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.dotnetLabs.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.dotnetLabs.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="dotnetLabs" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -111,6 +113,8 @@
       <workItem from="1743362042320" duration="59000" />
       <workItem from="1743420169764" duration="10240000" />
       <workItem from="1743431327374" duration="868000" />
+      <workItem from="1743444826842" duration="3324000" />
+      <workItem from="1743513000206" duration="1546000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <option name="closed" value="true" />
@@ -156,5 +160,24 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="updated" />
     <option name="LAST_COMMIT_MESSAGE" value="updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/dotnetLabs/XmlQueries.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\Yaroslav\RiderProjects\dotnetLabs\dotnetLabs\XmlQueries.cs" containingFunctionPresentation="Method 'Query1'">
+            <startOffsets>
+              <option value="381" />
+            </startOffsets>
+            <endOffsets>
+              <option value="407" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
