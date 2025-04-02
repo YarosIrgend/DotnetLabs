@@ -10,10 +10,10 @@ public static class XmlQueries
     private static IEnumerable<XElement> passengers = root.Descendants("passenger");
     private static IEnumerable<XElement> tickets = root.Descendants("ticket");
     private static IEnumerable<XElement> flights = root.Descendants("flight");
-    private static IEnumerable<XElement> routePlanes = root.Descendants("routePlanes");
-    private static IEnumerable<XElement> routes = root.Descendants("routes");
-    private static IEnumerable<XElement> planes = root.Descendants("planes");
-    private static IEnumerable<XElement> airlines = root.Descendants("airlines");
+    private static IEnumerable<XElement> routePlanes = root.Descendants("routePlane");
+    private static IEnumerable<XElement> routes = root.Descendants("route");
+    private static IEnumerable<XElement> planes = root.Descendants("plane");
+    private static IEnumerable<XElement> airlines = root.Descendants("airline");
 
     public static void Run()
     {
@@ -27,6 +27,7 @@ public static class XmlQueries
         Query8();
         Query9();
         Query10();
+        Query11();
     }
 
     private static void Query1()
@@ -263,12 +264,46 @@ public static class XmlQueries
     private static void Query11()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("Пасажири, які забронювали найбільше квитків на рейси в межах однієї авіакомпанії");
+            Console.WriteLine("Пасажири, які забронювали найбільше квитків на рейси в межах однієї авіакомпанії");
         Console.ResetColor();
 
-        var ticketsFlights = from ticket in tickets
+        // квитки по пасажирах та авіакомпаніях
+        var ticketsAirlines = from ticket in tickets
             join flight in flights on ticket.Element("FlightId").Value equals flight.Element("Id").Value
-            select new {Ticket = ticket, Flight = flight};
+            join passenger in passengers on ticket.Element("PassengerId").Value equals passenger.Element("Id").Value
+            join routePlane in routePlanes on flight.Element("RoutePlaneId").Value equals routePlane.Element("Id").Value
+            join plane in planes on routePlane.Element("PlaneId").Value equals plane.Element("Id").Value
+            join airline in airlines on plane.Element("AirlineId").Value equals airline.Element("Id").Value
+            group tickets by new
+            {
+                PassengerSurname = passenger.Element("Surname").Value,
+                AirlineName = airline.Element("Name").Value
+            }
+            into airline_tickets
+            select new
+            {
+                Passenger = airline_tickets.Key.PassengerSurname, 
+                Airline = airline_tickets.Key.AirlineName,
+                TicketCount = airline_tickets.ToList().Count
+            };
         
+        var maxTicketsPerAirline = ticketsAirlines
+            .GroupBy(t => t.Airline)
+            .Select(g => new
+            {
+                Airline = g.Key,
+                MaxCount = g.Max(t => t.TicketCount) 
+            });
+        
+        var topPassengers = from ticket in ticketsAirlines
+            join maxTicket in maxTicketsPerAirline on ticket.Airline equals maxTicket.Airline
+            where ticket.TicketCount == maxTicket.MaxCount 
+            orderby ticket.Airline
+            select ticket;
+
+        foreach (var passenger in topPassengers)
+        {
+            Console.WriteLine($"{passenger.Passenger} - {passenger.Airline} ({passenger.TicketCount})");
+        }
     }
 }
