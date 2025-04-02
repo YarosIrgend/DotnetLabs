@@ -7,6 +7,14 @@ public static class XmlQueries
     private static XDocument doc = XDocument.Load("Airport.xml");
     private static XElement root = doc.Root;
 
+    private static IEnumerable<XElement> passengers = root.Descendants("passenger");
+    private static IEnumerable<XElement> tickets = root.Descendants("ticket");
+    private static IEnumerable<XElement> flights = root.Descendants("flight");
+    private static IEnumerable<XElement> routePlanes = root.Descendants("routePlanes");
+    private static IEnumerable<XElement> routes = root.Descendants("routes");
+    private static IEnumerable<XElement> planes = root.Descendants("planes");
+    private static IEnumerable<XElement> airlines = root.Descendants("airlines");
+
     public static void Run()
     {
         Query1();
@@ -82,8 +90,6 @@ public static class XmlQueries
         Console.WriteLine("групування пасажирів з квитками бізнес-класу за віковими категоріями");
         Console.ResetColor();
 
-        var passengers = root.Descendants("passenger");
-        var tickets = root.Descendants("ticket");
         var collection4 = passengers
             .Where(p => tickets.Any(t =>
                 t.Element("PassengerId").Value == p.Element("Id").Value &&
@@ -119,7 +125,6 @@ public static class XmlQueries
         Console.WriteLine("Вивід пасажирів, чий вік дорівнює середньому");
         Console.ResetColor();
 
-        var passengers = root.Descendants("passenger");
         var collection5 =
             passengers.Where(p =>
                 int.Parse(p.Element("Age").Value) ==
@@ -138,8 +143,6 @@ public static class XmlQueries
         Console.WriteLine("групування пасажирів за віковими категоріями з додатковими даними");
         Console.ResetColor();
 
-        var passengers = root.Descendants("passenger");
-        var tickets = root.Descendants("ticket");
         var collection6 = passengers
             .Where(p => tickets.Any(t =>
                 t.Element("PassengerId").Value == p.Element("Id").Value &&
@@ -181,7 +184,6 @@ public static class XmlQueries
         Console.WriteLine("пасажири віку від 20 до 30 у спадному порядку");
         Console.ResetColor();
 
-        var passengers = root.Descendants("passenger");
         var collection7 = passengers.Where(p =>
                 int.Parse(p.Element("Age").Value) >= 20 && int.Parse(p.Element("Age").Value) <= 30)
             .OrderByDescending(p => int.Parse(p.Element("Age").Value));
@@ -197,8 +199,7 @@ public static class XmlQueries
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("Об'єднання літаків Boeing 777 та літаків авіакомпаній Британії");
         Console.ResetColor();
-        var planes = root.Descendants("plane");
-        var airlines = root.Descendants("airline");
+
         var boeings = planes.Join(airlines, p => p.Element("AirlineId").Value, a => a.Element("Id").Value,
                 (plane, airline) => new
                     { Model = plane.Element("Model").Value, AirlineCountry = airline.Element("Country").Value })
@@ -222,7 +223,6 @@ public static class XmlQueries
         Console.WriteLine("перетворення у словник маршрути. Ключ - id, значення (рейс та час)");
         Console.ResetColor();
 
-        var routes = root.Descendants("route");
         var collection9 = routes.ToDictionary(route => route.Element("Id").Value,
             route => (Origin: route.Element("Origin").Value, Destination: route.Element("Destination").Value));
         foreach (var route in collection9)
@@ -240,7 +240,6 @@ public static class XmlQueries
         Console.WriteLine("Групування рейсів по країнах вильоту з використанням проміжної route_group");
         Console.ResetColor();
 
-        var routes = root.Descendants("route");
         var collection10 = from route in routes
             group route by route.Element("OriginCountry").Value
             into route_group
@@ -257,6 +256,19 @@ public static class XmlQueries
                 Console.WriteLine($"\t{item.Element("Origin").Value} - {item.Element("Destination").Value}");
             }
         }
+
         Console.WriteLine();
+    }
+
+    private static void Query11()
+    {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Пасажири, які забронювали найбільше квитків на рейси в межах однієї авіакомпанії");
+        Console.ResetColor();
+
+        var ticketsFlights = from ticket in tickets
+            join flight in flights on ticket.Element("FlightId").Value equals flight.Element("Id").Value
+            select new {Ticket = ticket, Flight = flight};
+        
     }
 }
