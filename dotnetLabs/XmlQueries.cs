@@ -28,6 +28,7 @@ public static class XmlQueries
         Query9();
         Query10();
         Query11();
+        Query12();
     }
 
     private static void Query1()
@@ -264,7 +265,55 @@ public static class XmlQueries
     private static void Query11()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Пасажири, які забронювали найбільше квитків на рейси в межах однієї авіакомпанії");
+        Console.WriteLine("авіакомпанії, що здійснили найбільше рейсів за останній рік");
+        Console.ResetColor();
+
+        var flightAirlines = from airline in airlines
+            join plane in planes on airline.Element("Id").Value equals plane.Element("AirlineId").Value
+            join routePlane in routePlanes on plane.Element("Id").Value equals routePlane.Element("PlaneId").Value
+            join route in routes on routePlane.Element("RouteId").Value equals route.Element("Id").Value
+            join flight in flights on routePlane.Element("Id").Value equals flight.Element("RoutePlaneId").Value
+            where DateTime.Parse(flight.Element("DepartureDateTime").Value) >= DateTime.UtcNow.AddYears(-1)
+            group flight by airline.Element("Name").Value
+            into flightsGroup
+            select new
+            {
+                Airline = flightsGroup.Key,
+                Flights = flightsGroup.ToList(),
+                Count = flightsGroup.Count(),
+                Routes = (from flight in flightsGroup
+                    group flight by flight.Element("RoutePlaneId").Value
+                    into routeGroup
+                    select new
+                    {
+                        RouteId = routeGroup.Key,
+                        DelayedFlights = routeGroup.Count(flight =>
+                            DateTime.Parse(flight.Element("RealDepartureDateTime").Value) >
+                            DateTime.Parse(flight.Element("DepartureDateTime").Value))
+                    }).ToList()
+            };
+
+        var frequentAirlines = from flightAirline in flightAirlines
+            where flightAirline.Count == flightAirlines.Max(f => f.Count)
+            select flightAirline;
+
+        foreach (var airline in frequentAirlines)
+        {
+            Console.WriteLine($"{airline.Airline} - {airline.Count}");
+            foreach (var route in airline.Routes)
+            {
+                // Середня кількість затримок на кожному маршруті
+                double averageDelays = (double)route.DelayedFlights / airline.Count;
+                Console.WriteLine($"Route {route.RouteId} - Average Delays: {averageDelays:F2}");
+            }
+        }
+        Console.WriteLine();
+    }
+
+    private static void Query12()
+    {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Пасажири, які забронювали найбільше квитків на рейси в межах однієї авіакомпанії");
         Console.ResetColor();
 
         // квитки по пасажирах та авіакомпаніях
@@ -282,22 +331,22 @@ public static class XmlQueries
             into airline_tickets
             select new
             {
-                Passenger = airline_tickets.Key.PassengerSurname, 
+                Passenger = airline_tickets.Key.PassengerSurname,
                 Airline = airline_tickets.Key.AirlineName,
                 TicketCount = airline_tickets.ToList().Count
             };
-        
+
         var maxTicketsPerAirline = ticketsAirlines
             .GroupBy(t => t.Airline)
             .Select(g => new
             {
                 Airline = g.Key,
-                MaxCount = g.Max(t => t.TicketCount) 
+                MaxCount = g.Max(t => t.TicketCount)
             });
-        
+
         var topPassengers = from ticket in ticketsAirlines
             join maxTicket in maxTicketsPerAirline on ticket.Airline equals maxTicket.Airline
-            where ticket.TicketCount == maxTicket.MaxCount 
+            where ticket.TicketCount == maxTicket.MaxCount
             orderby ticket.Airline
             select ticket;
 

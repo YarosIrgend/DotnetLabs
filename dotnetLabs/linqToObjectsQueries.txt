@@ -309,3 +309,29 @@ foreach (var airline in delayedAirlines)
 {
     Console.WriteLine($"{airline.Name}, {airline.IncreasePercentage}");
 }
+
+//  LINQ TO XML 
+
+// var flightAirlines = from airline in airlines
+        //     join plane in planes on airline.Element("Id").Value equals plane.Element("AirlineId").Value
+        //     join routePlane in routePlanes on plane.Element("Id").Value equals routePlane.Element("PlaneId").Value
+        //     join route in routes on routePlane.Element("RouteId").Value equals route.Element("Id").Value
+        //     join flight in flights on routePlane.Element("Id").Value equals flight.Element("RoutePlaneId").Value
+        //     where DateTime.Parse(flight.Element("DepartureDateTime").Value) >= DateTime.UtcNow.AddYears(-1)
+        //     group flight by airline.Element("Name").Value
+        //     into flights
+        //     select new
+        //     {
+        //         Airline = flights.Key,
+        //         Flights = flights.ToList(),
+        //         Count = flights.Count()
+        //     };
+        //
+        // var frequentAirlines = from flightAirline in flightAirlines
+        //     where flightAirline.Count == flightAirlines.Max(f => f.Count)
+        //     select flightAirline;
+        //
+        // foreach (var airline in frequentAirlines)
+        // {
+        //     Console.WriteLine($"{airline.Airline} - {airline.Count}");
+        // }
