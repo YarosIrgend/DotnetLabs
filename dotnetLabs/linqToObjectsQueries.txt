@@ -163,7 +163,7 @@ foreach (var plane in collection8)
 Console.WriteLine();
 
 // перетворення в інші структури
-// перетворення у словник маршрути. Ключ - id, значення (рейс та час)
+// перетворення у словник маршрути. Ключ - id, значення - рейс
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("Перетворення у словник");
 Console.ResetColor();

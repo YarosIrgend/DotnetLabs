@@ -34,7 +34,7 @@ public class Flight
     public string DepartureDateTimeString
     {
         get => DepartureDateTime.ToString("yyyy-MM-dd HH:mm"); // Серіалізація
-        set => DepartureDateTime = DateTime.ParseExact(value, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture); // Десеріалізація
+        set => DepartureDateTime = DateTime.Parse(value); // Десеріалізація
     }
 
     [XmlIgnore] 
@@ -45,7 +45,7 @@ public class Flight
     public string RealDepartureDateTimeString
     {
         get => RealDepartureDateTime.ToString("yyyy-MM-dd HH:mm");
-        set => RealDepartureDateTime = DateTime.ParseExact(value, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
+        set => RealDepartureDateTime = DateTime.Parse(value);
     }
 
     [XmlElement] 
