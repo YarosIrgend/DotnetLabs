@@ -17,6 +17,9 @@ public static class XmlQueries
 
     public static void Run()
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("XML-запити");
+        Console.ResetColor();
         Query1();
         Query2();
         Query3();
@@ -29,6 +32,8 @@ public static class XmlQueries
         Query10();
         Query11();
         Query12();
+        Console.ReadLine();
+        Console.Clear();
     }
 
     private static void Query1()
@@ -354,5 +359,6 @@ public static class XmlQueries
         {
             Console.WriteLine($"{passenger.Passenger} - {passenger.Airline} ({passenger.TicketCount})");
         }
+        Console.WriteLine();
     }
 }

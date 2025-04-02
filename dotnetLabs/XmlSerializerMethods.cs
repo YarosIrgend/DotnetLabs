@@ -8,6 +8,10 @@ public static class XmlSerializerMethods
 
     public static void Run()
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Завантаження через XmlSerializer");
+        Console.ResetColor();
+        
         XmlSerializer serializer = new XmlSerializer(typeof(AirportSystem));
         using (TextReader reader = File.OpenText("Airport.xml"))
         {
@@ -19,6 +23,8 @@ public static class XmlSerializerMethods
             PrintFlights();
             PrintTickets();
         }
+        Console.ReadLine();
+        Console.Clear();
     }
 
     private static void PrintPassengers()

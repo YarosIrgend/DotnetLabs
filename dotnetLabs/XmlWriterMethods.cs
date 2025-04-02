@@ -6,6 +6,10 @@ public static class XmlWriterMethods
     // завдання 2
     public static void CreateXmlWriter()
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Створення xml-файлу xmlwriter'ом");
+        Console.ResetColor();
+        
         XmlWriterSettings settings = new XmlWriterSettings();
         settings.Indent = true;
         settings.IndentChars = "    ";
@@ -22,6 +26,11 @@ public static class XmlWriterMethods
             WriteTicket(writer);
             writer.WriteEndElement();
         }
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Внесено");
+        Console.ResetColor();
+        Console.ReadLine();
+        Console.Clear();
     }
 
     // запис наявних даних в xml
@@ -146,7 +155,8 @@ public static class XmlWriterMethods
         {
             "1" => "Economy",
             "2" => "Business",
-            "3" => "First"
+            "3" => "First",
+            _ => "Economy"
         };
         writer.WriteElementString("SeatClass", seatClass);
         writer.WriteElementString("PassengerId", "1");

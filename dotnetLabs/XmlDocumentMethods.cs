@@ -8,6 +8,10 @@ public static class XmlDocumentMethods
     
     public static void Run()
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Завантаження через XmlDocument");
+        Console.ResetColor();
+        
         doc = new XmlDocument();
         doc.Load("Airport.xml");
         XmlNode root = doc.DocumentElement;
@@ -38,6 +42,8 @@ public static class XmlDocumentMethods
                     continue;
             }
         }
+        Console.ReadLine();
+        Console.Clear();
     }
 
     private static void PrintPassengers()
