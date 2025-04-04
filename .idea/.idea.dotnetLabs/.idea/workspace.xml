@@ -9,10 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlDocumentMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlDocumentMethods.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlQueries.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlQueries.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/XmlWriterMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +35,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a8a2211ff7b6ce5ab05b41d416904ec475a643fb8cbb2261f85a750b13217/Console.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50e7efad1a37cb62ab4bc73124525f74d12a98bb25c653b05d6fe4c623637a/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b855fbc1e37bfe07afce284794c772bc4a285ccb8e9d3fd8e71deea7f82d9a/TextWriter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Ollika/RiderProjects/dotnetLabs/dotnetLabs/Classes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -114,9 +109,13 @@
       <workItem from="1743362042320" duration="59000" />
       <workItem from="1743420169764" duration="10240000" />
       <workItem from="1743431327374" duration="868000" />
-      <workItem from="1743444826842" duration="3324000" />
-      <workItem from="1743513000206" duration="1546000" />
-      <workItem from="1743633211801" duration="2258000" />
+      <workItem from="1743522015043" duration="2855000" />
+      <workItem from="1743540297170" duration="5483000" />
+      <workItem from="1743592047173" duration="8850000" />
+      <workItem from="1743609154380" duration="68000" />
+      <workItem from="1743612133877" duration="5380000" />
+      <workItem from="1743757174683" duration="1779000" />
+      <workItem from="1743763101311" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <option name="closed" value="true" />
@@ -152,13 +151,21 @@
     </task>
     <task id="LOCAL-00005" summary="updated">
       <option name="closed" value="true" />
-      <created>1743633300220</created>
+      <created>1743599698302</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1743633300220</updated>
+      <updated>1743599698302</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated">
+      <option name="closed" value="true" />
+      <created>1743609218733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743609218733</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -14,7 +14,7 @@ public static class XmlWriterMethods
         settings.Indent = true;
         settings.IndentChars = "    ";
         
-        using (XmlWriter writer = XmlWriter.Create("airportXmlWriter.xml", settings))
+        using (XmlWriter writer = XmlWriter.Create("AirportXmlWriter.xml", settings))
         {
             writer.WriteStartElement("airportSystem");
             WritePassenger(writer);
