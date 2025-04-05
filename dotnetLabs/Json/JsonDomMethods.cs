@@ -10,7 +10,7 @@ public static class JsonDomMethods
     private static JsonElement root;
 
     private static JsonDocumentOptions docOptions = new();
-    
+
 
     public static void Run()
     {
@@ -37,12 +37,7 @@ public static class JsonDomMethods
         string json = File.ReadAllText("Airport.json");
         doc = JsonDocument.Parse(json, docOptions);
         root = doc.RootElement;
-        PrintPassengers();
-    }
-
-    private static void PrintPassengers()
-    {
-        Console.WriteLine("Покажем пасажрів, використовуючи методи та типи JsonDocument");
+        Console.WriteLine("Покажем пасажирів, використовуючи методи та типи JsonDocument");
         foreach (var passenger in root.GetProperty("Passengers").EnumerateArray())
         {
             Console.WriteLine($"Passenger: {passenger.GetProperty("Surname")} {passenger.GetProperty("Name")}, {
@@ -52,6 +47,12 @@ public static class JsonDomMethods
 
     private static void JsonNodeRun()
     {
-        
+        Console.WriteLine("Покажем авіалінії, використовуючи методи та типи JsonNode");
+        string json = File.ReadAllText("Airport.json");
+        JsonNode node = JsonNode.Parse(json);
+        foreach (var airline in node["Airlines"].AsArray())
+        {
+            Console.WriteLine($"{airline["Name"]} - {airline["Country"]}");
+        }
     }
 }

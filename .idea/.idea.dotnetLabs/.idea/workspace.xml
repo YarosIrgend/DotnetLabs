@@ -7,16 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="created">
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/Classes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/JsonDomMethods.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/JsonSerialization.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/Program.cs" afterDir="false" />
+    <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Classes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Json/Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/Json/JsonDomMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Json/JsonDomMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +171,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743866929714</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated">
+      <option name="closed" value="true" />
+      <created>1743882026758</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743882026758</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated">
+      <option name="closed" value="true" />
+      <created>1743882039308</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743882039308</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,9 +197,9 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated" />
     <MESSAGE value="new added" />
     <MESSAGE value="created" />
-    <option name="LAST_COMMIT_MESSAGE" value="created" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
 </project>
