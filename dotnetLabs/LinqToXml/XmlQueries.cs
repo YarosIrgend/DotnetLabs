@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace dotnetLabs;
+namespace dotnetLabs.LinqToXml;
 
 public static class XmlQueries
 {

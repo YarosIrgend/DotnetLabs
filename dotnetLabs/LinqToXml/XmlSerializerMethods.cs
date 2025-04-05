@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace dotnetLabs;
+namespace dotnetLabs.LinqToXml;
 
 public static class XmlSerializerMethods
 {

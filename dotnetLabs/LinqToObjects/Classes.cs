@@ -1,4 +1,6 @@
-﻿public enum SeatClass
+﻿namespace dotnetLabs.LinqToObjects;
+
+public enum SeatClass
 {
     Economy,
     Business,

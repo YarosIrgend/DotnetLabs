@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-namespace dotnetLabs;
+namespace dotnetLabs.LinqToXml;
 
 public static class XmlWriterMethods
 {

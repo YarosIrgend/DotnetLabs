@@ -1,4 +1,6 @@
-﻿public static class Data
+﻿namespace dotnetLabs.LinqToObjects;
+
+public static class Data
 {
     public static List<Passenger> passengers = new()
     {
