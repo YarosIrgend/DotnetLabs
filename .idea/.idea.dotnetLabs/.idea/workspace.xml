@@ -7,12 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="">
+    <list default="true" id="91a205b9-231e-4326-84cb-bc17b8563fbf" name="Changes" comment="created">
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/Classes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/JsonDomMethods.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/JsonSerialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dotnetLabs/Json/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnetLabs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/dotnetLabs.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/dotnetLabs.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnetLabs/linqToObjectsQueries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Classes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Json/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/LinqToJson/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnetLabs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnetLabs/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +42,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cb11a939bb6b497eb54274e532a5690912108/46/90758271/JsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a8a2211ff7b6ce5ab05b41d416904ec475a643fb8cbb2261f85a750b13217/Console.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50e7efad1a37cb62ab4bc73124525f74d12a98bb25c653b05d6fe4c623637a/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b753c59e56d814e3cf28ac844c833e628c8cf099921e5fa2521c6c4595bd2c/JsonDocumentOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b855fbc1e37bfe07afce284794c772bc4a285ccb8e9d3fd8e71deea7f82d9a/TextWriter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/dotnetLabs/XmlSerializerMethods.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -157,7 +162,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743633300220</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="created">
+      <option name="closed" value="true" />
+      <created>1743866671569</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743866671569</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created">
+      <option name="closed" value="true" />
+      <created>1743866929714</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743866929714</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +190,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="updated" />
     <MESSAGE value="new added" />
-    <option name="LAST_COMMIT_MESSAGE" value="new added" />
+    <MESSAGE value="created" />
+    <option name="LAST_COMMIT_MESSAGE" value="created" />
   </component>
 </project>

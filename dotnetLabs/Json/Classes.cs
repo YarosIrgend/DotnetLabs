@@ -1,4 +1,4 @@
-﻿namespace dotnetLabs.LinqToJson;
+﻿namespace dotnetLabs.Json;
 
 public enum SeatClass
 {
