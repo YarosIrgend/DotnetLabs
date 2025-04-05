@@ -10,8 +10,7 @@ public static class JsonDomMethods
     private static JsonElement root;
 
     private static JsonDocumentOptions docOptions = new();
-
-
+    
     public static void Run()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -27,7 +26,6 @@ public static class JsonDomMethods
                 JsonNodeRun();
                 break;
         }
-
         Console.ReadLine();
         Console.Clear();
     }

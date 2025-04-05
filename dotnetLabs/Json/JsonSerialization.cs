@@ -55,7 +55,6 @@ public static class JsonSerialization
         PrintRoutes();
         PrintFlights();
         PrintTickets();
-        
     }
     
     private static void PrintPassengers()
