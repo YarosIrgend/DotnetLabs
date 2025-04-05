@@ -1,10 +1,6 @@
-﻿int a = Convert.ToInt32(Console.ReadLine());
+﻿// точка входу програми
 
-if (a == 0)
-{
-    dotnetLabs.LinqToObjects.Program.Run();
-}
-else
-{
-    dotnetLabs.LinqToXml.Program.Run();
-}
+// лаба 1 dotnetLabs.LinqToObjects.Program.Run();
+// лаба 2 dotnetLabs.LinqToXml.Program.Run();
+// лаба 3
+dotnetLabs.LinqToJson.Program.Run();
