@@ -40,7 +40,7 @@ public static class JsonDomMethods
         Console.WriteLine("Покажем пасажирів, використовуючи методи та типи JsonDocument");
         foreach (var passenger in root.GetProperty("Passengers").EnumerateArray())
         {
-            Console.WriteLine($"Passenger: {passenger.GetProperty("Surname")} {passenger.GetProperty("Name")}, {
+            Console.WriteLine($"{passenger.GetProperty("Surname")} {passenger.GetProperty("Name")}, {
                 passenger.GetProperty("Age")}");
         }
     }
