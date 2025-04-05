@@ -1,4 +1,6 @@
-﻿public enum SeatClass
+﻿// основні класи для всіх лаб
+
+public enum SeatClass
 {
     Economy,
     Business,

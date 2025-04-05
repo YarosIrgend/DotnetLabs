@@ -1,4 +1,6 @@
-﻿public static class Data
+﻿// основні дані для всіх лаб
+
+public static class Data
 {
     public static List<Passenger> passengers = new()
     {
